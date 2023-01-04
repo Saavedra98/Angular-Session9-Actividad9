@@ -3,31 +3,33 @@
     <h1 class="text-center text-3xl font-semibold text-white">CALCULADORA</h1>
   </div>
   <div class="m-2">
-    <label class="mr-5 p-2 text-xl font-semibold" for="valor1">Ingrese primer valor:</label>
-    <input type="number" id="valor1" class="w-1/2 border-2 border-sky-900 rounded-md p-2"
-      [(ngModel)]="valor1" #a>
+    <label class="mr-5 p-2 text-xl font-semibold" for="num1">Ingrese primer valor:</label>
+    <input type="number" id="num1" class="w-1/2 border-2 border-sky-900 rounded-md p-2"
+      [(ngModel)]="num1" #a>
   </div>
   <div class="m-2">
-    <label for="valor2" class="mr-1 p-2 text-xl font-semibold">Ingrese segundo valor:</label>
-    <input type="number" id="valor2" class="w-1/2 border-2 border-sky-900 rounded-md p-2"
-      [(ngModel)]="valor2" #b>
+    <label for="num2" class="mr-1 p-2 text-xl font-semibold">Ingrese segundo valor:</label>
+    <input type="number" id="num2" class="w-1/2 border-2 border-sky-900 rounded-md p-2"
+      [(ngModel)]="num2" #b>
   </div>
   <div class="m-2 my-5 p-2">
-    <select class="form-select border-2 border-sky-900 rounded-md p-2 px-5 text-xl" #select (click)="mostrar()">
+    <select class="form-select border-2 border-sky-900 rounded-md p-2 px-5 text-xl" #op (click)="mostrar()">
+      <option value="5" selected>Elija una opcion</option>
       <option value="1">Sumar</option>
       <option value="2">Restar</option>
-      <option value="3">Dividir</option>
-      <option value="4">Multiplicar</option>
-      <option value="5" selected>Elija una opcion</option>
+      <option value="3">Multiplicar</option>
+      <option value="4">Dividir</option>
+      
+      
     </select>
   </div>
   <div class="m-4">
-    <p [ngSwitch]="select.value" class="text-xl font-semibold">Resultado:
-      <span [ngStyle]="{'color':'red'}" *ngSwitchCase="5">No eligio operación</span>
-      <span [ngStyle]="{'color':'blue'}" *ngSwitchCase="1">{{valor1+valor2}}</span>
-      <span [ngStyle]="{'color':'green'}" *ngSwitchCase="2">{{valor1-valor2}}</span>
-      <span [ngStyle]="{'color':'purple'}" *ngSwitchCase="3">{{valor1/valor2}}</span>
-      <span [ngStyle]="{'color':'orange'}" *ngSwitchCase="4">{{valor1*valor2}}</span>
+    <p [ngSwitch]="op.value" class="text-xl font-semibold">Resultado:
+      <span [ngStyle]="{'color':'red'}" *ngSwitchCase="5">No escogió una opcion</span>
+      <span [ngStyle]="{'color':'green'}" *ngSwitchCase="1">{{num1+num2}}</span>
+      <span [ngStyle]="{'color':'blue'}" *ngSwitchCase="2">{{num1-num2}}</span>
+      <span [ngStyle]="{'color':'orange'}" *ngSwitchCase="3">{{num1*num2}}</span>
+      <span [ngStyle]="{'color':'black'}" *ngSwitchCase="4">{{num1/num2}}</span>
 
     </p>
   </div>

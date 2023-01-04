@@ -7,16 +7,15 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class BodyComponent {
 
-  valor1:number=0;
-  valor2:number=0;  
-  @ViewChild('select') selector!:ElementRef
+  num1:number=0;
+  num2:number=0;  
+  @ViewChild('op') selector!:ElementRef
 
   mostrar(){
     
   }
   constructor() { }
 
-  ngOnInit(): void {
-  }
+
 
 }
